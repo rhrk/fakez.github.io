@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fakez · DJ / Developer</title>
+  <style>
+    /* Modern professional reset & design system */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0b0d10;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #e3e6ea;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      padding: 2.5rem 1.5rem;
+    }
+
+    /* Header / Hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 0 1.5rem;
+    }
+
+    .avatar-ring {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a970ff, #ff6ec7, #4a9eff);
+      padding: 3px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 40px rgba(169, 112, 255, 0.35);
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #1a1d23;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23a970ff"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>');
+      background-size: 50%;
+      background-position: center 55%;
+      background-repeat: no-repeat;
+      border: 3px solid #0b0d10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #a970ff;
+      text-shadow: 0 0 20px rgba(169, 112, 255, 0.4);
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #ffffff 0%, #c7b3ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .handle {
+      font-size: 1.1rem;
+      color: #a970ff;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      justify-content: center;
+    }
+
+    .handle svg {
+      width: 20px;
+      height: 20px;
+      fill: #a970ff;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #b0b8c5;
+      max-width: 700px;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      background: #151a21;
+      border: 1px solid #2a3039;
+      border-radius: 100px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #d3d9e2;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .badge:hover {
+      border-color: #a970ff;
+      background: #1d2330;
+    }
+
+    .badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #4caf92;
+      box-shadow: 0 0 8px #4caf92;
+    }
+
+    .badge .dot.roblox {
+      background-color: #f25c5c;
+      box-shadow: 0 0 8px #f25c5c;
+    }
+
+    .badge .dot.twitch {
+      background-color: #a970ff;
+      box-shadow: 0 0 8px #a970ff;
+    }
+
+    .badge .dot.discord {
+      background-color: #5865f2;
+      box-shadow: 0 0 8px #5865f2;
+    }
+
+    /* Stats grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.25rem;
+      margin: 3rem 0 2rem;
+    }
+
+    .stat-card {
+      background: #11151c;
+      border: 1px solid #232a33;
+      border-radius: 20px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: transform 0.15s ease, border-color 0.2s ease;
+    }
+
+    .stat-card:hover {
+      border-color: #a970ff;
+      transform: translateY(-2px);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #8f9aa8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+    }
+
+    .stat-card .platform {
+      font-size: 0.75rem;
+      color: #a970ff;
+      margin-top: 0.3rem;
+      font-weight: 500;
+    }
+
+    /* Sections */
+    .section {
+      margin: 3.5rem 0;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 1.6rem;
+      background: linear-gradient(180deg, #a970ff, #4a9eff);
+      border-radius: 4px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .card {
+      background: #0f1319;
+      border: 1px solid #1f262f;
+      border-radius: 20px;
+      padding: 1.75rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: #2f3a48;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #e3e6ea;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card p {
+      color: #a4aebb;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .card ul li {
+      color: #b8c1cd;
+      font-size: 0.95rem;
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card ul li::before {
+      content: '▹';
+      color: #a970ff;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .code-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .code-tag {
+      background: #1a1f28;
+      border: 1px solid #2a313c;
+      border-radius: 8px;
+      padding: 0.3rem 0.8rem;
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 0.85rem;
+      color: #b3c7ff;
+    }
+
+    .project-item {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid #1d232b;
+    }
+
+    .project-item:last-child {
+      border-bottom: none;
+    }
+
+    .project-item h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-item p {
+      color: #9aa5b3;
+      font-size: 0.9rem;
+    }
+
+    .project-item .highlight {
+      color: #a970ff;
+      font-weight: 500;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      padding: 2rem 0 3rem;
+      border-top: 1px solid #1a1f26;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer p {
+      color: #6b7684;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      color: #8b95a3;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+      font-weight: 500;
+    }
+
+    .social-links a:hover {
+      color: #a970ff;
+    }
+
+    /* small accent */
+    .accent-text {
+      color: #a970ff;
+      font-weight: 600;
+    }
+
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: #1e2430;
+      border-radius: 100px;
+      padding: 0.2rem 0.7rem 0.2rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #cbd2dc;
+      border: 1px solid #2e3644;
+    }
+
+    .verified-badge svg {
+      width: 14px;
+      height: 14px;
+      fill: #a970ff;
+    }
+
+    .connections-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .connection-pill {
+      background: #151b24;
+      border: 1px solid #252d3a;
+      border-radius: 100px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8rem;
+      color: #b0b9c6;
+      font-weight: 500;
+    }
+
+    .connection-pill span {
+      color: #a970ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="avatar-ring">
+        <div class="avatar"></div>
+      </div>
+      <h1>fakez</h1>
+      <div class="handle">
+        <svg viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+        twitch.tv/fakezdev
+      </div>
+      <p class="tagline">
+        Official Twitch DJ · Developer · Username hunter. Building tools, connections, and experiences across platforms.
+      </p>
+      <div class="badge-row">
+        <div class="badge"><span class="dot twitch"></span> 300K+ Twitch</div>
+        <div class="badge"><span class="dot roblox"></span> 50K+ Roblox</div>
+        <div class="badge"><span class="dot discord"></span> Community giant</div>
+        <div class="badge"><span class="dot"></span> Python · C# · Lua</div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">300K+</div>
+        <div class="stat-label">Followers</div>
+        <div class="platform">Twitch</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">50K+</div>
+        <div class="stat-label">Followers</div>
+        <div class="platform">Roblox</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4c / 4l / 5l</div>
+        <div class="stat-label">Username scans</div>
+        <div class="platform">Discord</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Platforms</div>
+        <div class="platform">Scanned</div>
+      </div>
+    </div>
+
+    <!-- About / Developer -->
+    <div class="section">
+      <div class="section-title">Developer & Creator</div>
+      <div class="two-col">
+        <div class="card">
+          <h3>💻 Languages & Tools</h3>
+          <p>I build automation, scanners, and backend tools with a focus on speed and reliability.</p>
+          <div class="code-tags">
+            <span class="code-tag">Python</span>
+            <span class="code-tag">C#</span>
+            <span class="code-tag">Lua</span>
+            <span class="code-tag">REST APIs</span>
+            <span class="code-tag">Web Scraping</span>
+            <span class="code-tag">Automation</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>🔍 Username Scanning</h3>
+          <p>My main projects revolve around scanning and securing rare usernames across major platforms.</p>
+          <ul>
+            <li>Discord — 4c, 4L, 5L username giveaways</li>
+            <li>Roblox, Twitch, guns.lol, Minecraft, GitHub</li>
+            <li>Real-time availability & claim automation</li>
+            <li>High-volume scanning infrastructure</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Projects & Community -->
+    <div class="section">
+      <div class="section-title">Projects & Community</div>
+      <div class="two-col">
+        <div class="card">
+          <h3>🚀 Main Projects</h3>
+          <div class="project-item">
+            <h4>Discord Username Scanner</h4>
+            <p>Automated scanning and distribution of <span class="highlight">4-character, 4-letter, and 5-letter</span> usernames. Used for community giveaways and drops.</p>
+          </div>
+          <div class="project-item">
+            <h4>Multi-Platform Username Checker</h4>
+            <p>Scans <span class="highlight">Roblox, Discord, Twitch, guns.lol, Minecraft, GitHub</span> and more for username availability, with notification and claim support.</p>
+          </div>
+          <div class="project-item">
+            <h4>Twitch DJ Tooling</h4>
+            <p>Custom tools and integrations built around live DJ performance, chat interaction, and stream automation.</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>🌐 Connections & Reputation</h3>
+          <p>I’ve built strong relationships across the developer and gaming communities. My network includes:</p>
+          <div class="connections-list">
+            <span class="connection-pill"><span>✓</span> Reputable devs</span>
+            <span class="connection-pill"><span>✓</span> Verified users</span>
+            <span class="connection-pill"><span>✓</span> Platform insiders</span>
+            <span class="connection-pill"><span>✓</span> Large Discord servers</span>
+            <span class="connection-pill"><span>✓</span> Twitch / Roblox creators</span>
+          </div>
+          <p style="margin-top: 1.25rem; color: #8f9aa8; font-size: 0.9rem;">
+            50K+ Roblox followers · 300K+ Twitch followers · Trusted in scanning & username communities.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>© 2025 fakez — DJ & Developer. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://twitch.tv/fakezdev" target="_blank">Twitch</a>
+        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank">Discord</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
