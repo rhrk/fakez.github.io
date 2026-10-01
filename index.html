@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fakez · DJ / Developer</title>
+  <title>fakez - developer - 400k combined followers</title>
   <style>
-    /* Modern professional reset & design system */
     * {
       margin: 0;
       padding: 0;
@@ -30,7 +29,7 @@
       padding: 2.5rem 1.5rem;
     }
 
-    /* Header / Hero */
+    /* Hero */
     .hero {
       display: flex;
       flex-direction: column;
@@ -40,13 +39,13 @@
     }
 
     .avatar-ring {
-      width: 128px;
-      height: 128px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       background: linear-gradient(135deg, #a970ff, #ff6ec7, #4a9eff);
       padding: 3px;
       margin-bottom: 1.5rem;
-      box-shadow: 0 0 40px rgba(169, 112, 255, 0.35);
+      box-shadow: 0 0 50px rgba(169, 112, 255, 0.35);
     }
 
     .avatar {
@@ -54,18 +53,11 @@
       height: 100%;
       border-radius: 50%;
       background-color: #1a1d23;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23a970ff"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>');
-      background-size: 50%;
-      background-position: center 55%;
+      background-image: url('profile.png');
+      background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
       border: 3px solid #0b0d10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      font-weight: 700;
-      color: #a970ff;
-      text-shadow: 0 0 20px rgba(169, 112, 255, 0.4);
     }
 
     h1 {
@@ -83,7 +75,7 @@
       font-size: 1.1rem;
       color: #a970ff;
       font-weight: 500;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
       gap: 0.4rem;
@@ -94,6 +86,15 @@
       width: 20px;
       height: 20px;
       fill: #a970ff;
+    }
+
+    .status-line {
+      font-size: 0.85rem;
+      color: #6b7684;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      border-left: 2px solid #2a3039;
+      padding-left: 0.75rem;
     }
 
     .tagline {
@@ -154,7 +155,12 @@
       box-shadow: 0 0 8px #5865f2;
     }
 
-    /* Stats grid */
+    .badge .dot.studio {
+      background-color: #f2c94c;
+      box-shadow: 0 0 8px #f2c94c;
+    }
+
+    /* Stats */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -362,29 +368,9 @@
       color: #a970ff;
     }
 
-    /* small accent */
     .accent-text {
       color: #a970ff;
       font-weight: 600;
-    }
-
-    .verified-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      background: #1e2430;
-      border-radius: 100px;
-      padding: 0.2rem 0.7rem 0.2rem 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #cbd2dc;
-      border: 1px solid #2e3644;
-    }
-
-    .verified-badge svg {
-      width: 14px;
-      height: 14px;
-      fill: #a970ff;
     }
 
     .connections-list {
@@ -407,6 +393,161 @@
     .connection-pill span {
       color: #a970ff;
     }
+
+    .discord-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #5865f2;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.85rem 1.8rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 1.5rem;
+      transition: background 0.2s ease, transform 0.1s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .discord-cta:hover {
+      background: #4752c4;
+      transform: scale(1.02);
+    }
+
+    .discord-cta svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+    }
+
+    .inline-link {
+      color: #a970ff;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .inline-link:hover {
+      border-bottom-color: #a970ff;
+    }
+
+    .roblox-highlight {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #11161e;
+      border: 1px solid #202730;
+      border-radius: 16px;
+    }
+
+    .roblox-highlight .icon {
+      width: 48px;
+      height: 48px;
+      background: #1c232d;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .roblox-highlight .icon svg {
+      width: 28px;
+      height: 28px;
+      fill: #f25c5c;
+    }
+
+    .roblox-highlight .info {
+      flex: 1;
+    }
+
+    .roblox-highlight .info h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.15rem;
+    }
+
+    .roblox-highlight .info p {
+      font-size: 0.85rem;
+      color: #8f9aa8;
+    }
+
+    .studio-highlight {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #15171e;
+      border: 1px solid #242a36;
+      border-radius: 16px;
+    }
+
+    .studio-highlight .icon {
+      width: 48px;
+      height: 48px;
+      background: #1c232d;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .studio-highlight .icon svg {
+      width: 28px;
+      height: 28px;
+      fill: #f2c94c;
+    }
+
+    .studio-highlight .info {
+      flex: 1;
+    }
+
+    .studio-highlight .info h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.15rem;
+    }
+
+    .studio-highlight .info p {
+      font-size: 0.85rem;
+      color: #8f9aa8;
+    }
+
+    .studio-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #1e2430;
+      color: #d3d9e2;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      transition: background 0.2s ease, border-color 0.2s ease;
+      border: 1px solid #2a3039;
+    }
+
+    .studio-cta:hover {
+      background: #252c3a;
+      border-color: #a970ff;
+    }
+
+    .studio-cta svg {
+      width: 16px;
+      height: 16px;
+      fill: #f2c94c;
+    }
   </style>
 </head>
 <body>
@@ -421,28 +562,41 @@
         <svg viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
         twitch.tv/fakezdev
       </div>
+      <div class="status-line">
+        not streaming until 2030. somewhat known in the community.
+      </div>
       <p class="tagline">
         Official Twitch DJ · Developer · Username hunter. Building tools, connections, and experiences across platforms.
       </p>
       <div class="badge-row">
-        <div class="badge"><span class="dot twitch"></span> 300K+ Twitch</div>
-        <div class="badge"><span class="dot roblox"></span> 50K+ Roblox</div>
+        <div class="badge"><span class="dot twitch"></span> 373K Twitch</div>
+        <div class="badge"><span class="dot roblox"></span> 58.5K Roblox</div>
+        <div class="badge"><span class="dot studio"></span> 11.9K Studio</div>
         <div class="badge"><span class="dot discord"></span> Community giant</div>
         <div class="badge"><span class="dot"></span> Python · C# · Lua</div>
       </div>
+      <a href="https://discord.gg/XDwtgSdKVW" class="discord-cta" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        Join free username Discord
+      </a>
     </div>
 
     <!-- Stats -->
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-number">300K+</div>
+        <div class="stat-number">373K</div>
         <div class="stat-label">Followers</div>
         <div class="platform">Twitch</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">50K+</div>
+        <div class="stat-number">58.5K</div>
         <div class="stat-label">Followers</div>
         <div class="platform">Roblox</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">11.9K</div>
+        <div class="stat-label">Members</div>
+        <div class="platform">moon dev studios</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">4c / 4l / 5l</div>
@@ -456,12 +610,81 @@
       </div>
     </div>
 
-    <!-- About / Developer -->
+    <!-- Roblox Section -->
+    <div class="section">
+      <div class="section-title">Roblox Presence</div>
+      <div class="two-col">
+        <div class="card">
+          <h3>mxxnsly</h3>
+          <p>
+            My Roblox profile <a href="https://www.roblox.com/users/5273098478/profile" class="inline-link" target="_blank">mxxnsly</a> 
+            has built a following of over <span class="accent-text">58,500 followers</span>, with 61 friends 
+            and a growing catalog of clothing and game projects.
+          </p>
+          <div class="roblox-highlight">
+            <div class="icon">
+              <svg viewBox="0 0 24 24"><path d="M5.5 2L2 5.5 5.5 9 9 5.5 5.5 2zm13 0L15 5.5 18.5 9 22 5.5 18.5 2zM5.5 15L2 18.5 5.5 22 9 18.5 5.5 15zm13 0L15 18.5 18.5 22 22 18.5 18.5 15z"/></svg>
+            </div>
+            <div class="info">
+              <h4>58.5K+ Followers</h4>
+              <p>Active community presence with reputable devs and verified users added</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>moon dev studios</h3>
+          <p>
+            I own and operate <a href="https://www.roblox.com/communities/33429874/moon-dev-studios" class="inline-link" target="_blank">moon dev studios</a>, 
+            a Roblox community focused on game development and UI commissions. The group has grown to 
+            over <span class="accent-text">11,900 members</span>.
+          </p>
+          <div class="studio-highlight">
+            <div class="icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="info">
+              <h4>11.9K+ Members</h4>
+              <p>Game & UI commissions — pm mxxnsly for inquiries</p>
+            </div>
+          </div>
+          <a href="https://www.roblox.com/communities/33429874/moon-dev-studios" class="studio-cta" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            View Group
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Catalog & Projects -->
+    <div class="section">
+      <div class="section-title">Projects</div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Roblox Projects (public)</h3>
+          <ul>
+            <li>Fakez Testing Place — 43.5K visits, actively maintained</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Commission Work</h3>
+          <p>
+            Through <span class="accent-text">moon dev studios</span>, I take on game and UI commissions 
+            on Roblox. The group serves as a hub for developers, designers, and creators looking to 
+            collaborate on projects.
+          </p>
+          <p style="margin-top: 1rem; color: #8f9aa8; font-size: 0.9rem;">
+            For commissions, message <a href="https://www.roblox.com/users/5273098478/profile" class="inline-link" target="_blank">mxxnsly</a> directly on Roblox.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Developer -->
     <div class="section">
       <div class="section-title">Developer & Creator</div>
       <div class="two-col">
         <div class="card">
-          <h3>💻 Languages & Tools</h3>
+          <h3>Languages & Tools</h3>
           <p>I build automation, scanners, and backend tools with a focus on speed and reliability.</p>
           <div class="code-tags">
             <span class="code-tag">Python</span>
@@ -473,7 +696,7 @@
           </div>
         </div>
         <div class="card">
-          <h3>🔍 Username Scanning</h3>
+          <h3>Username Scanning</h3>
           <p>My main projects revolve around scanning and securing rare usernames across major platforms.</p>
           <ul>
             <li>Discord — 4c, 4L, 5L username giveaways</li>
@@ -485,12 +708,12 @@
       </div>
     </div>
 
-    <!-- Main Projects & Community -->
+    <!-- Projects & Community -->
     <div class="section">
       <div class="section-title">Projects & Community</div>
       <div class="two-col">
         <div class="card">
-          <h3>🚀 Main Projects</h3>
+          <h3>Main Projects</h3>
           <div class="project-item">
             <h4>Discord Username Scanner</h4>
             <p>Automated scanning and distribution of <span class="highlight">4-character, 4-letter, and 5-letter</span> usernames. Used for community giveaways and drops.</p>
@@ -505,8 +728,8 @@
           </div>
         </div>
         <div class="card">
-          <h3>🌐 Connections & Reputation</h3>
-          <p>I’ve built strong relationships across the developer and gaming communities. My network includes:</p>
+          <h3>Connections & Reputation</h3>
+          <p>I've built strong relationships across the developer and gaming communities. My network includes:</p>
           <div class="connections-list">
             <span class="connection-pill"><span>✓</span> Reputable devs</span>
             <span class="connection-pill"><span>✓</span> Verified users</span>
@@ -515,7 +738,7 @@
             <span class="connection-pill"><span>✓</span> Twitch / Roblox creators</span>
           </div>
           <p style="margin-top: 1.25rem; color: #8f9aa8; font-size: 0.9rem;">
-            50K+ Roblox followers · 300K+ Twitch followers · Trusted in scanning & username communities.
+            58.5K+ Roblox followers · 373K Twitch followers · 11.9K studio members
           </p>
         </div>
       </div>
@@ -526,8 +749,9 @@
       <p>© 2025 fakez — DJ & Developer. All rights reserved.</p>
       <div class="social-links">
         <a href="https://twitch.tv/fakezdev" target="_blank">Twitch</a>
-        <a href="#" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Discord</a>
+        <a href="https://www.roblox.com/users/5273098478/profile" target="_blank">Roblox</a>
+        <a href="https://www.roblox.com/communities/33429874/moon-dev-studios" target="_blank">Studio</a>
+        <a href="https://discord.gg/XDwtgSdKVW" target="_blank">Discord</a>
       </div>
     </div>
   </div>
